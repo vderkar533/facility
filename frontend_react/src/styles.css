@@ -1,0 +1,239 @@
+:root {
+  --bg0: #070b13;
+  --bg1: #0b1320;
+  --card: rgba(255, 255, 255, 0.06);
+  --cardBorder: rgba(255, 255, 255, 0.12);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.68);
+  --danger: #ff4d4f;
+  --accent0: #e82329;
+  --accent1: #ff6b6b;
+  --shadow: rgba(0, 0, 0, 0.55);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: radial-gradient(1000px 700px at 20% 10%, rgba(232, 35, 41, 0.18), transparent 55%),
+    radial-gradient(900px 600px at 80% 20%, rgba(255, 107, 107, 0.12), transparent 55%),
+    linear-gradient(180deg, var(--bg1), var(--bg0));
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+}
+
+.page {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  place-items: center;
+  padding: 28px 16px 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bgGlow {
+  position: absolute;
+  inset: -200px -200px auto -200px;
+  height: 520px;
+  background: radial-gradient(closest-side, rgba(232, 35, 41, 0.25), transparent 68%);
+  filter: blur(14px);
+  pointer-events: none;
+  transform: translateY(-40px);
+}
+
+.card {
+  width: min(520px, 100%);
+  background: var(--card);
+  border: 1px solid var(--cardBorder);
+  border-radius: 18px;
+  box-shadow: 0 24px 60px var(--shadow);
+  backdrop-filter: blur(14px);
+  padding: 22px;
+}
+
+.brand {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.logo {
+  width: 160px;
+  height: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.brandText h1 {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: 0.2px;
+}
+
+.brandText p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.field input {
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.28);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.field input:focus {
+  border-color: rgba(232, 35, 41, 0.55);
+  box-shadow: 0 0 0 4px rgba(232, 35, 41, 0.18);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 2px;
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  user-select: none;
+}
+
+.checkbox input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent0);
+}
+
+.meta {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.52);
+}
+
+.error {
+  border: 1px solid rgba(255, 77, 79, 0.35);
+  background: rgba(255, 77, 79, 0.12);
+  color: rgba(255, 255, 255, 0.95);
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+.button {
+  margin-top: 6px;
+  appearance: none;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 14px;
+  color: white;
+  font-weight: 650;
+  letter-spacing: 0.2px;
+  background: linear-gradient(135deg, var(--accent0), var(--accent1));
+  box-shadow: 0 12px 24px rgba(232, 35, 41, 0.24);
+  cursor: pointer;
+  transition: transform 0.06s ease, filter 0.15s ease;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(30%) opacity(70%);
+  box-shadow: none;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.footnote {
+  margin-top: 4px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.45;
+}
+
+.success {
+  border: 1px solid rgba(0, 255, 160, 0.22);
+  background: rgba(0, 255, 160, 0.08);
+  border-radius: 14px;
+  padding: 14px 14px;
+}
+
+.successTitle {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.successBody,
+.successHint {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.successHint {
+  margin-top: 8px;
+}
+
+.footer {
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .brand {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .logo {
+    width: 190px;
+  }
+}
+

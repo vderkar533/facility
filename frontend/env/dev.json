@@ -1,0 +1,5 @@
+{
+  "API_BASE_URL": "http://10.0.2.2:5003/api",
+  "EXTERNAL_AUTH_URL": "http://45.114.143.183:83/api/auth/login",
+  "FLUTTER_WEB_PORT": "5005"
+}

@@ -1,5 +1,5 @@
 const DEFAULT_API_BASE_URL =
-  process.env.NODE_ENV === "development" ? "http://localhost:4000" : "";
+  process.env.NODE_ENV === "development" ? "http://localhost:5003" : "";
 const API_BASE_URL = (process.env.REACT_APP_API_BASE_URL || DEFAULT_API_BASE_URL).replace(/\/+$/, "");
 
 async function request(path, options = {}) {

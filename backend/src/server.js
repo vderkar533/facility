@@ -11,7 +11,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = Number(process.env.PORT || 4000);
+const PORT = Number(process.env.PORT || 5003);
 const NORMAL_USER_AUTH_API_URL =
   process.env.NORMAL_USER_AUTH_API_URL || "http://45.114.143.183:83/api/auth/login";
 const NORMAL_USER_AUTH_CLIENT_ID = process.env.NORMAL_USER_AUTH_CLIENT_ID || "internal-portal";

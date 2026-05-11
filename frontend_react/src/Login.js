@@ -477,7 +477,7 @@ export default function Login({ onLoginSuccess }) {
               </div>
             ) : null}
 
-            <div className="login-footnote">Login opens with admin defaults. New admin and service-person accounts require OTP approval from the super admin email.</div>
+            <div className="login-footnote"></div>
           </form>
 
           

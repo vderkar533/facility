@@ -162,8 +162,14 @@ Color siteAccentTint(String siteArea) {
 }
 
 class ApiConfig {
-  static const baseUrl = 'http://10.0.2.2:4000/api';
-  static const externalAuthUrl = 'http://45.114.143.183:83/api/auth/login';
+  static const baseUrl = String.fromEnvironment(
+    'API_BASE_URL',
+    defaultValue: 'http://10.0.2.2:5003/api',
+  );
+  static const externalAuthUrl = String.fromEnvironment(
+    'EXTERNAL_AUTH_URL',
+    defaultValue: 'http://45.114.143.183:83/api/auth/login',
+  );
 }
 
 class AuthSession {
